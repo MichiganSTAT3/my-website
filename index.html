@@ -1,252 +1,157 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Portfolio</title>
+<style>
+    :root {
+        /* Cherry Blossom × Virginia Athletics Palette */
+        --bg: #FAF7F8;          /* Petal white */
+        --primary: #8C1D18;    /* Cardinal red */
+        --secondary: #1F2A44;  /* Deep navy */
+        --text: #374151;       /* Neutral body text */
+        --muted: #6B7280;      /* Muted gray */
+        --card: #FFFFFF;       /* Card background */
+        --border: #E5E7EB;     /* Subtle borders */
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+        /* Accent tones */
+        --blush: #F2C6CC;      /* Cherry blossom */
+        --blush-soft: #F8E6E9;
+    }
 
-    <style>
-        :root {
-            /* Color-blind friendly palette */
-            --bg: #f9fafb;
-            --primary: #1f4fd8;   /* Blue (safe for most color blindness) */
-            --secondary: #111827;
-            --text: #374151;
-            --muted: #6b7280;
-            --card: #ffffff;
-            --border: #e5e7eb;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
+    a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 600;
+    }
 
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-        }
+    a:hover {
+        text-decoration: underline;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    /* Layout */
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+    }
 
-        /* Layout */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-        }
+    /* Navbar */
+    .navbar {
+        background: var(--card);
+        border-bottom: 1px solid var(--border);
+    }
 
-        /* Navbar */
-        .navbar {
-            background: var(--card);
-            border-bottom: 1px solid var(--border);
-        }
+    .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 1rem 1.5rem;
+    }
 
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
-        }
+    .logo {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--secondary);
+    }
 
-        .logo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--secondary);
-        }
+    .nav-links {
+        display: flex;
+        gap: 1.5rem;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
+    /* Hero */
+    .hero {
+        padding: 4rem 0;
+    }
 
-        /* Hero */
-        .hero {
-            padding: 4rem 0;
-        }
+    .hero h1 {
+        font-size: 2.5rem;
+        color: var(--secondary);
+        margin-bottom: 1rem;
+    }
 
-        .hero h1 {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
+    .hero p {
+        max-width: 600px;
+        font-size: 1.1rem;
+        color: var(--muted);
+    }
 
-        .hero p {
-            max-width: 600px;
-            font-size: 1.1rem;
-            color: var(--muted);
-        }
+    /* Sections */
+    section {
+        margin-top: 4rem;
+    }
 
-        /* Sections */
-        section {
-            margin-top: 4rem;
-        }
+    section h2 {
+        font-size: 1.75rem;
+        color: var(--secondary);
+        margin-bottom: 1.5rem;
+    }
 
-        section h2 {
-            font-size: 1.75rem;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-        }
+    /* Cards */
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
 
-        /* Cards */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
+    .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 1.5rem;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-        .card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.5rem;
-        }
+    .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(31, 42, 68, 0.08);
+    }
 
-        .card h3 {
-            margin-bottom: 0.5rem;
-            color: var(--secondary);
-        }
+    .card h3 {
+        margin-bottom: 0.5rem;
+        color: var(--secondary);
+    }
 
-        .card p {
-            font-size: 0.95rem;
-            color: var(--muted);
-        }
+    .card p {
+        font-size: 0.95rem;
+        color: var(--muted);
+    }
 
-        /* Skills */
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
+    /* Skills */
+    .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
 
-        .skill {
-            background: #eef2ff;
-            color: #1e40af;
-            padding: 0.4rem 0.75rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
+    .skill {
+        background: var(--blush-soft);
+        color: var(--secondary);
+        padding: 0.4rem 0.75rem;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        border: 1px solid var(--blush);
+    }
 
-        /* Footer */
-        footer {
-            margin-top: 5rem;
-            padding: 2rem 1.5rem;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            font-size: 0.9rem;
-            color: var(--muted);
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-content">
-            <div class="logo">Ryan Bernardo</div>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero -->
-    <header class="hero container">
-        <h1>Turning Data into Strategy. Strategy into wins. Wins into unforgetable fan moments.</h1>
-        <p>
-            
-        </p>
-    </header>
-
-    <!-- About -->
-    <section id="about" class="container">
-        <h2>About Me</h2>
-        <p>
-            I've been in the sports analytics industry for four years both on
-            the business activation side and the business intelligence side
-            helping decision makers generate more revenue and learn more about
-            their fan demographics through data analysis.
-        </p>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="container">
-        <h2>Projects</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Sales Performance Dashboard</h3>
-                <p>
-                    Analyzed regional sales data and built an interactive dashboard
-                    to track KPIs and identify growth opportunities.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Customer Churn Analysis</h3>
-                <p>
-                    Used SQL and Python to identify churn drivers and provided
-                    retention recommendations.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Marketing Campaign Analysis</h3>
-                <p>
-                    Evaluated campaign effectiveness using A/B testing and
-                    data visualization.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="container">
-        <h2>Skills</h2>
-        <div class="skills">
-            <span class="skill">SQL</span>
-            <span class="skill">Python</span>
-            <span class="skill">Excel</span>
-            <span class="skill">Tableau</span>
-            <span class="skill">Power BI</span>
-            <span class="skill">Statistics</span>
-            <span class="skill">Data Visualization</span>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="container">
-        <h2>Contact</h2>
-        <p>
-            Email: <a href="mailto:ryan@email.com">ryan@email.com</a><br>
-            LinkedIn: <a href="#">linkedin.com/in/ryanbernardo</a>
-        </p>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        © 2026 Ryan Bernardo · Data Analytics Portfolio
-    </footer>
-
-</body>
-</html>
-
+    /* Footer */
+    footer {
+        margin-top: 5rem;
+        padding: 2rem 1.5rem;
+        border-top: 1px solid var(--border);
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--muted);
+    }
+</style>
