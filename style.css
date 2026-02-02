@@ -17,6 +17,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-main);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* Navbar Styling */
@@ -26,7 +27,8 @@ body {
     align-items: center;
     padding: 1.5rem 10%;
     background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px); /* Modern frosted glass effect */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -62,12 +64,13 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    /* Fixed background syntax */
     background: linear-gradient(rgba(255,245,247,0.7), rgba(255,245,247,0.7)), 
-                url('https://images.unsplash.com/photo-1522383225653-ed111181a951?q=80&w=2076') center/cover;
+                url('https://images.unsplash.com/photo-1522383225653-ed111181a951?q=80&w=2076') center/cover no-repeat;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Responsive font size */
     margin-bottom: 1rem;
     color: var(--text-main);
 }
@@ -78,9 +81,10 @@ body {
     background-color: var(--accent-sakura);
     color: white;
     text-decoration: none;
-    border-radius: 50px; /* Rounded for a softer look */
+    border-radius: 50px;
     transition: transform 0.3s, background 0.3s;
     margin-top: 1.5rem;
+    font-weight: 700;
 }
 
 .btn:hover {
@@ -106,12 +110,13 @@ body {
     padding: 2.5rem;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(74, 55, 55, 0.05);
-    transition: border 0.3s;
+    transition: all 0.3s ease;
     border: 1px solid transparent;
 }
 
 .card:hover {
     border: 1px solid var(--accent-light);
+    transform: translateY(-5px);
 }
 
 .card h3 {
