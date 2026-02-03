@@ -1,125 +1,109 @@
-:root {
-    --bg-color: #FFF5F7;
-    --text-main: #4A3737;
-    --accent-sakura: #FFB7C5;
-    --accent-light: #FADADD;
-    --white: #ffffff;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* style2.css */
 
 body {
+    margin: 0;
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    line-height: 1.6;
-    overflow-x: hidden;
+    background-color: #FCFCFC; /* White  */
+    color: #1C1A1B;
 }
 
-/* Navbar Styling */
 .navbar {
+    background-color: #D4D4D4; /* Dusk Gray */
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 10%;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); /* Safari support */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .logo {
     font-size: 1.5rem;
-    letter-spacing: 1px;
-    color: var(--text-main);
+    font-weight: 700;
+    color: #1C1A1B; /* Carbon Black */
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-main);
-    font-weight: 400;
-    transition: color 0.3s;
+    color: #1C1A1B;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: var(--accent-sakura);
+    color: #FCFCFC; /* White */
 }
 
-/* Hero Section */
 .hero {
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: linear-gradient(to right, #ffe3ed, #fffafc);
+    padding: 4rem 2rem;
     text-align: center;
-    /* Fixed background syntax */
-    background: linear-gradient(rgba(255,245,247,0.7), rgba(255,245,247,0.7)), 
-                url('https://images.unsplash.com/photo-1522383225653-ed111181a951?q=80&w=2076') center/cover no-repeat;
 }
 
 .hero h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem); /* Responsive font size */
-    margin-bottom: 1rem;
-    color: var(--text-main);
+    font-size: 2.5rem;
+    color: #1C1A1B;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    color: #1C1A1B;
 }
 
 .btn {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    background-color: var(--accent-sakura);
+    background-color: #b03a5b;
     color: white;
+    padding: 0.75rem 1.5rem;
     text-decoration: none;
-    border-radius: 50px;
-    transition: transform 0.3s, background 0.3s;
-    margin-top: 1.5rem;
-    font-weight: 700;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #f89fb0;
-    transform: translateY(-3px);
+    background-color: #7a2e47;
 }
 
-/* Services Section */
 .services {
-    padding: 5rem 10%;
+    padding: 3rem 2rem;
+    background-color: #E6E1D6;
     text-align: center;
 }
 
+.services h2 {
+    font-size: 2rem;
+    color: #1C1A1B;
+    margin-bottom: 2rem;
+}
+
 .card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    justify-content: center;
     gap: 2rem;
-    margin-top: 3rem;
+    flex-wrap: wrap;
 }
 
 .card {
-    background: var(--white);
-    padding: 2.5rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(74, 55, 55, 0.05);
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-}
-
-.card:hover {
-    border: 1px solid var(--accent-light);
-    transform: translateY(-5px);
+    background-color: #D8D6C9;
+    border: 1px solid #f8e4ec;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .card h3 {
-    margin-bottom: 1rem;
-    color: var(--accent-sakura);
+    color: #1C1A1B;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    color: ##1C1A1B;
+    font-size: 0.95rem;
 }
