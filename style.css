@@ -3,10 +3,11 @@
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background-color: #FCFCFC; /* White  */
+    background-color: #FCFCFC; /* White */
     color: #1C1A1B;
 }
 
+/* NAVIGATION */
 .navbar {
     background-color: #D4D4D4; /* Dusk Gray */
     padding: 1rem 2rem;
@@ -39,37 +40,94 @@ body {
     color: #FCFCFC; /* White */
 }
 
+/* HERO SECTION */
 .hero {
     background: linear-gradient(to right, #ffe3ed, #fffafc);
     padding: 4rem 2rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero h1 {
     font-size: 2.5rem;
     color: #1C1A1B;
+    max-width: 800px;
 }
 
-.hero p {
-    font-size: 1.2rem;
-    margin: 1rem 0;
-    color: #1C1A1B;
+/* BIO SECTION & ANIMATION */
+#bio-text {
+    display: none; /* Controlled by JS showBio() */
+    margin-top: 25px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.7); 
+    border-left: 4px solid #002147; /* Florida Blue Accent */
+    border-radius: 8px;
+    text-align: left;
+    max-width: 900px;
+    line-height: 1.6;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    animation: fadeIn 0.6s ease-out forwards;
 }
 
-.btn {
-    background-color: #b03a5b;
-    color: white;
-    padding: 0.75rem 1.5rem;
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(15px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* SIDE-BY-SIDE LAYOUT */
+.bio-container {
+    display: flex;
+    align-items: flex-start; /* Aligns image to top of text */
+    gap: 30px; 
+}
+
+.bio-image {
+    width: 180px;        
+    height: 180px;
+    border-radius: 12px; /* Modern squared-round look */
+    object-fit: cover;   
+    flex-shrink: 0;      
+    border: 3px solid #002147; /* Professional border */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.bio-description p {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    color: #333;
+}
+
+/* BUTTONS */
+.cta-button {
+    cursor: pointer;
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #002147; /* Solid Dark Blue */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    margin-top: 20px;
 }
 
-.btn:hover {
-    background-color: #7a2e47;
+.cta-button:hover {
+    background-color: #003366;
+    transform: translateY(-2px);
 }
 
+/* SERVICES & CARDS */
 .services {
     padding: 3rem 2rem;
     background-color: #E6E1D6;
@@ -98,52 +156,21 @@ body {
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
-.card h3 {
-    color: #1C1A1B;
-    margin-bottom: 0.5rem;
-}
-
-.card p {
-    color: ##1C1A1B;
-    font-size: 0.95rem;
-}
-.cta-button {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #D4D4D4; /* Choose your brand color */
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-}
-
-.cta-button:hover {
-    background-color: #333; /* Darkens slightly when hovered */
-}
-
-.bio-container {
-    display: flex;
-    align-items: center; /* Vertically centers the text next to the photo */
-    gap: 20px;           /* Adds space between the photo and the text */
-    margin-top: 20px;
-    text-align: left;    /* Ensures text stays left-aligned inside its box */
-}
-
-.bio-image {
-    width: 150px;        /* Adjust size as needed */
-    height: 150px;
-    border-radius: 50%;  /* Makes the image circular (optional) */
-    object-fit: cover;   /* Prevents the image from stretching */
-    flex-shrink: 0;      /* Prevents the image from getting squished */
-}
-
-/* Responsive: Stack them on top of each other on small screens */
-@media (max-width: 600px) {
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
     .bio-container {
         flex-direction: column;
+        align-items: center;
         text-align: center;
     }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .bio-image {
+        width: 150px;
+        height: 150px;
+    }
+}
 }
