@@ -85,20 +85,18 @@ body {
 /* SIDE-BY-SIDE LAYOUT */
 .bio-container {
     display: flex;
-    align-items: flex-start; /* Aligns image to top of text */
-    gap: 30px; 
+    align-items: flex-start;
+    gap: 25px;
 }
 
 .bio-image {
-    width: 180px;        
-    height: 180px;
-    border-radius: 12px; /* Modern squared-round look */
-    object-fit: cover;   
-    flex-shrink: 0;      
-    border: 3px solid #002147; /* Professional border */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    width: 180px;      /* Set the width you want */
+    height: 180px;     /* Set the height to match for a square */
+    object-fit: cover; /* This crops the image to fit the square without stretching */
+    flex-shrink: 0;    /* This prevents the "squeezing" effect from your screenshot */
+    border-radius: 8px;
+    border: 2px solid #002147;
 }
-
 .bio-description p {
     margin-top: 0;
     margin-bottom: 1.2rem;
