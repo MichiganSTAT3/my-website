@@ -99,8 +99,8 @@ body {
 .bio-image {
     width: 180px;
     height: 180px;
-    object-fit: cover;
-    flex-shrink: 0;
+    object-fit: cover; /* Prevents stretching */
+    flex-shrink: 0;    /* Prevents the "smushed" pill look */
     border-radius: 8px;
     border: 2px solid #002147;
 }
