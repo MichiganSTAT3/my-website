@@ -7,35 +7,48 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* This hides the bio by default */
+        /* These styles handle the layout of the bio content */
         #bio-text {
             display: none; 
             margin-top: 25px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05); /* Subtle background */
-            border-left: 3px solid #002147; /* Professional accent line */
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9); /* Brighter for readability */
+            border-left: 4px solid #002147; 
             text-align: left;
-            max-width: 800px;
+            max-width: 900px;
             line-height: 1.6;
-            animation: fadeIn 0.5s ease;
+            animation: fadeIn 0.5s ease forwards;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Flexbox wrapper to put image and text side-by-side */
+        .bio-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+        }
+
+        .bio-image {
+            width: 180px;
+            height: auto;
+            border-radius: 12px;
+            flex-shrink: 0;
+            border: 2px solid #002147;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .cta-button {
-            cursor: pointer;
-            display: inline-block;
-            padding: 12px 28px;
-            background-color: #002147;
-            color: #ffffff;
-            border: none;
-            border-radius: 4px;
-            font-weight: 700;
-            font-family: 'Inter', sans-serif;
-            text-decoration: none;
+        /* Responsive stack for mobile */
+        @media (max-width: 700px) {
+            .bio-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -50,25 +63,33 @@
     </ul>
 </nav>
 
-<div id="bio-text">
-    <div class="bio-wrapper">
-        <img src="Portrait.jpg" alt="Ryan Bernardo" class="bio-image">
+<header class="hero">
+    <div class="hero-content">
+        <h1>Turning data into wins and wins into fan memories.</h1>
 
-        <div class="bio-description">
-            <p>
-                <strong>Ryan Bernardo</strong> currently serves as the 
-                <strong>Associate Director of Revenue Generation & Data Analytics</strong> for the University Athletic Association at the University of Florida. 
-                His work focuses on the integration of CRM systems and Marketing Cloud architecture to optimize 
-                revenue streams and support the growth of the ticket office. 
-            </p>
-            <p>
-                With a background ranging from business activations with the Washington Commanders to back-end 
-                data analytics, my perspective bridges the gap between fan input and decision maker output to help 
-                <strong>turn data into wins and wins into fan memories.</strong>
-            </p>
+        <button onclick="showBio()" class="cta-button">Bio</button>
+
+        <div id="bio-text">
+            <div class="bio-container">
+                <img src="Portrait.jpg" alt="Ryan Bernardo" class="bio-image">
+                
+                <div class="bio-description">
+                    <p>
+                        <strong>Ryan Bernardo</strong> currently serves as the 
+                        <strong>Associate Director of Revenue Generation & Data Analytics</strong> for the University Athletic Association at the University of Florida. 
+                        His work focuses on the integration of CRM systems and Marketing Cloud architecture to optimize 
+                        revenue streams and support the growth of the ticket office. 
+                    </p>
+                    <p>
+                        With a background ranging from business activations with the Washington Commanders to back-end 
+                        data analytics, my perspective bridges the gap between fan input and decision maker output to help 
+                        <strong>turn data into wins and wins into fan memories.</strong>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</header>
 
 <script>
     function showBio() {
@@ -83,8 +104,6 @@
 
 </body>
 </html>
-
-
 
 
 
