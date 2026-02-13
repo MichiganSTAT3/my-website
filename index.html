@@ -7,22 +7,21 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* These styles handle the layout of the bio content */
+        /* This ensures the hidden section starts invisible and uses your animation */
         #bio-text {
             display: none; 
             margin-top: 25px;
             padding: 30px;
-            background: rgba(255, 255, 255, 0.9); /* Brighter for readability */
+            background: rgba(255, 255, 255, 0.95);
             border-left: 4px solid #002147; 
             text-align: left;
             max-width: 900px;
             line-height: 1.6;
-            animation: fadeIn 0.5s ease forwards;
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            animation: fadeIn 0.5s ease forwards;
         }
 
-        /* Flexbox wrapper to put image and text side-by-side */
         .bio-container {
             display: flex;
             align-items: flex-start;
@@ -31,9 +30,10 @@
 
         .bio-image {
             width: 180px;
-            height: auto;
+            height: 180px; /* Force square */
+            object-fit: cover; /* Prevent stretching */
             border-radius: 12px;
-            flex-shrink: 0;
+            flex-shrink: 0; /* Prevents squishing */
             border: 2px solid #002147;
         }
 
@@ -42,7 +42,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Responsive stack for mobile */
         @media (max-width: 700px) {
             .bio-container {
                 flex-direction: column;
@@ -69,10 +68,11 @@
 
         <button onclick="showBio()" class="cta-button">Bio</button>
 
-      <div class="bio-container">
-    <img src="https://raw.githubusercontent.com/ryanb/my-portfolio/main/Portrait.jpg" 
-         alt="Ryan Bernardo" 
-         class="bio-image">
+        <div id="bio-text">
+            <div class="bio-container">
+                <img src="https://raw.githubusercontent.com/ryanb/my-portfolio/main/Portrait.jpg" 
+                     alt="Ryan Bernardo" 
+                     class="bio-image">
                 
                 <div class="bio-description">
                     <p>
@@ -95,6 +95,7 @@
 <script>
     function showBio() {
         var x = document.getElementById("bio-text");
+        // Toggle logic
         if (x.style.display === "none" || x.style.display === "") {
             x.style.display = "block";
         } else {
@@ -105,7 +106,6 @@
 
 </body>
 </html>
-
 
 
 
