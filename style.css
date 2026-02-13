@@ -99,8 +99,8 @@ body {
 .bio-image {
     width: 180px;
     height: 180px;
-    object-fit: cover; /* Prevents stretching */
-    flex-shrink: 0;    /* Prevents the "smushed" pill look */
+    object-fit: cover; /* This ensures your face isn't stretched if the photo isn't a perfect square */
+    flex-shrink: 0;    /* This prevents the text from squeezing the image into a pill shape */
     border-radius: 8px;
     border: 2px solid #002147;
 }
