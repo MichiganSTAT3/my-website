@@ -223,3 +223,9 @@ body {
 .linkedin-link i {
     display: block;
 }
+.cta-button {
+    display: inline-flex; 
+    align-items: center;
+    gap: 10px; /* Adds space between icon and text */
+    /* ... keep your other existing styles ... */
+}
