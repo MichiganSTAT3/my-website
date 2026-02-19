@@ -1,70 +1,209 @@
-<!DOCTYPE html>
+home page. <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Bio | Ryan Bernardo</title>
+
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* This ensures the hidden section starts invisible and uses your animation */
+
+        #bio-text {
+
+            display: none; 
+
+            margin-top: 25px;
+
+            padding: 30px;
+
+            background: rgba(255, 255, 255, 0.95);
+
+            border-left: 4px solid #002147; 
+
+            text-align: left;
+
+            max-width: 900px;
+
+            line-height: 1.6;
+
+            border-radius: 8px;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+            animation: fadeIn 0.5s ease forwards;
+
+        }
+
+
+
+        .bio-container {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 25px;
+
+        }
+
+
+
+        .bio-image {
+
+            width: 180px;
+
+            height: 180px; /* Force square */
+
+            object-fit: cover; /* Prevent stretching */
+
+            border-radius: 12px;
+
+            flex-shrink: 0; /* Prevents squishing */
+
+            border: 2px solid #002147;
+
+        }
+
+
+
+        @keyframes fadeIn {
+
+            from { opacity: 0; transform: translateY(10px); }
+
+            to { opacity: 1; transform: translateY(0); }
+
+        }
+
+
+
+        @media (max-width: 700px) {
+
+            .bio-container {
+
+                flex-direction: column;
+
+                align-items: center;
+
+                text-align: center;
+
+            }
+
+        }
+
+    </style>
+
 </head>
+
 <body>
 
+
+
 <nav class="navbar">
+
     <div class="logo">RYAN <strong>BERNARDO</strong></div>
+
     <ul class="nav-links">
+
         <li><a href="index.html">Home</a></li>
+
         <li><a href="projects.html">Projects</a></li>
+
         <li><a href="contact.html">Contact</a></li>
+
     </ul>
+
 </nav>
 
+
+
 <header class="hero">
+
     <div class="hero-content">
+
         <h1>Turning data into wins and wins into fan memories.</h1>
+
         <button onclick="showBio()" class="cta-button">Bio</button>
+
     </div>
+
+
 
     <div id="bio-text">
+
         <div class="bio-container">
+
             <img src="https://raw.githubusercontent.com/MichiganSTAT3/my-website/main/Portrait.jpg" 
+
                  alt="Ryan Bernardo" 
+
                  class="bio-image">
+
             
+
             <div class="bio-description">
+
                 <p>
+
                     <strong>Ryan Bernardo</strong> currently serves as the 
+
                     <strong>Associate Director of Revenue Generation & Data Analytics</strong> for the University Athletic Association at the University of Florida. 
+
                 </p>
+
                 <p>
+
                     With a background ranging from business activations with the Washington Commanders to back-end 
+
                     data analytics, my perspective bridges the gap between fan input and decision maker output to help 
+
                     <strong>turn data into wins and wins into fan memories.</strong>
+
                 </p>
+
             </div>
+
         </div>
+
     </div>
+
 </header>
 
-<section class="contact">
-    <h2>Connect with me</h2>
-    <p>Let's talk about sports analytics and revenue generation.</p>
-    <a href="https://www.linkedin.com/in/ryanbernardo/" target="_blank" class="linkedin-link">
-        <i class="fab fa-linkedin"></i>
-    </a>
-</section>
+
 
 <script>
+
     function showBio() {
+
         var x = document.getElementById("bio-text");
+
+        // Toggle logic
+
         if (x.style.display === "none" || x.style.display === "") {
+
             x.style.display = "block";
+
         } else {
+
             x.style.display = "none";
+
         }
+
     }
+
 </script>
 
-</body>
-</html>
 
+
+</body>
+
+</html>
