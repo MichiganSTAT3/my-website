@@ -65,7 +65,7 @@ body {
     margin-bottom: 1rem;
 }
 .hero {
-    /* Replace 'stadium-data.jpg' with your actual filename */
+    /* Replace 'https://github.com/MichiganSTAT3/my-website/blob/main/Gemini_Generated_Image_w88oe8w88oe8w88o.png' with your actual filename */
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
                 url('stadium-data.jpg') no-repeat center center fixed;
     background-size: cover;
