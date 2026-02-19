@@ -45,37 +45,31 @@ body {
 }
 
 .nav-links a:hover {
-    color: #002147; /* Changed from white to Blue for better contrast on light gray */
+    color: #002147; 
 }
 
 /* 3. HERO SECTION */
 .hero {
-    background: linear-gradient(to right, #ffe3ed, #fffafc);
-    padding: 5rem 2rem; /* Increased padding */
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    color: #1C1A1B;
-    max-width: 800px;
-    margin-bottom: 1rem;
-}
-.hero {
-    /* Replace 'https://github.com/MichiganSTAT3/my-website/blob/main/Gemini_Generated_Image_w88oe8w88oe8w88o.png' with your actual filename */
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('stadium-data.jpg') no-repeat center center fixed;
+    /* Background setup using your stadium image */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('https://raw.githubusercontent.com/MichiganSTAT3/my-website/main/Gemini_Generated_Image_w88oe8w88oe8w88o.png') no-repeat center center fixed;
     background-size: cover;
-    min-height: 100vh; /* Ensures it fills the whole screen height */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white; /* Makes your text pop against the dark background */
+    color: white;
     text-align: center;
+    padding: 5rem 2rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: #ffffff; /* Forced white for readability on dark background */
+    max-width: 800px;
+    margin-bottom: 1rem;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.9); /* Enhances readability */
 }
 
 /* 4. BIO SECTION & ANIMATION */
@@ -83,13 +77,14 @@ body {
     display: none; /* Toggle via JS showBio() */
     margin-top: 25px;
     padding: 30px;
-    background: rgba(255, 255, 255, 0.9); /* Slightly more opaque for readability */
+    background: rgba(255, 255, 255, 0.95); 
     border-left: 4px solid #002147;
     border-radius: 8px;
     text-align: left;
     max-width: 900px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     animation: fadeIn 0.6s ease-out forwards;
+    color: #333;
 }
 
 @keyframes fadeIn {
@@ -112,8 +107,8 @@ body {
 .bio-image {
     width: 180px;
     height: 180px;
-    object-fit: cover; /* This ensures your face isn't stretched if the photo isn't a perfect square */
-    flex-shrink: 0;    /* This prevents the text from squeezing the image into a pill shape */
+    object-fit: cover; 
+    flex-shrink: 0;    
     border-radius: 8px;
     border: 2px solid #002147;
 }
@@ -128,11 +123,13 @@ body {
 /* 5. BUTTONS */
 .cta-button {
     cursor: pointer;
-    display: inline-block;
+    display: inline-flex; 
+    align-items: center;
+    gap: 10px; 
     padding: 12px 28px;
     background-color: #002147;
     color: #ffffff;
-    border: none;
+    border: 2px solid #ffffff; /* White border for contrast */
     border-radius: 4px;
     font-weight: 700;
     font-family: inherit;
@@ -142,7 +139,8 @@ body {
 }
 
 .cta-button:hover {
-    background-color: #003366;
+    background-color: #ffffff;
+    color: #002147;
     transform: translateY(-2px);
 }
 
@@ -165,39 +163,11 @@ body {
     border: 1px solid rgba(0,0,0,0.05);
     padding: 2rem;
     border-radius: 8px;
-    width: 280px; /* Slightly wider */
+    width: 280px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
-/* 7. RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-    .bio-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-
-    .bio-image {
-        width: 150px;
-        height: 150px;
-    }
-    
-    .card {
-        width: 100%; /* Full width on mobile */
-        max-width: 350px;
-    }
-/* ... (rest of your media query code) ... */
-    .card {
-        width: 100%; /* Full width on mobile */
-        max-width: 350px;
-    }
-} /* <--- THIS BRACE CLOSES THE MEDIA QUERY. DON'T MISS IT! */
-
-/* 8. CONTACT SECTION - This is now OUTSIDE the media query so it works on all screens */
+/* 7. CONTACT SECTION */
 .contact {
     padding: 5rem 2rem;
     text-align: center;
@@ -218,7 +188,7 @@ body {
     color: #6b7280;
 }
 
-/* 9. LINKEDIN LOGO */
+/* 8. LINKEDIN LOGO */
 .linkedin-link {
     font-size: 50px;           
     color: #0077b5;            
@@ -233,12 +203,25 @@ body {
     transform: scale(1.15);
 }
 
-.linkedin-link i {
-    display: block;
-}
-.cta-button {
-    display: inline-flex; 
-    align-items: center;
-    gap: 10px; /* Adds space between icon and text */
-    /* ... keep your other existing styles ... */
+/* 9. RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .bio-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .bio-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .card {
+        width: 100%; 
+        max-width: 350px;
+    }
 }
