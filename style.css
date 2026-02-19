@@ -177,16 +177,49 @@ body {
         width: 100%; /* Full width on mobile */
         max-width: 350px;
     }
+/* ... (rest of your media query code) ... */
+    .card {
+        width: 100%; /* Full width on mobile */
+        max-width: 350px;
+    }
+} /* <--- THIS BRACE CLOSES THE MEDIA QUERY. DON'T MISS IT! */
+
+/* 8. CONTACT SECTION - This is now OUTSIDE the media query so it works on all screens */
+.contact {
+    padding: 5rem 2rem;
+    text-align: center;
+    background-color: #FCFCFC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact p {
+    margin-bottom: 2rem;
+    color: #6b7280;
+}
+
+/* 9. LINKEDIN LOGO */
 .linkedin-link {
-  font-size: 40px;          /* Size of the logo */
-  color: #0077b5;           /* Official LinkedIn Blue */
-  text-decoration: none;    /* Removes the underline */
-  transition: transform 0.3s ease;
-  display: inline-block;
+    font-size: 50px;           
+    color: #0077b5;            
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;     
+    line-height: 1;            
 }
 
 .linkedin-link:hover {
-  color: #005582;           /* Darkens slightly on hover */
-  transform: scale(1.1);    /* Makes it pop out slightly */
+    color: #005582;
+    transform: scale(1.15);
+}
+
+.linkedin-link i {
+    display: block;
 }
