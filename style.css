@@ -64,6 +64,19 @@ body {
     max-width: 800px;
     margin-bottom: 1rem;
 }
+.hero {
+    /* Replace 'stadium-data.jpg' with your actual filename */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('stadium-data.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh; /* Ensures it fills the whole screen height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Makes your text pop against the dark background */
+    text-align: center;
+}
 
 /* 4. BIO SECTION & ANIMATION */
 #bio-text {
