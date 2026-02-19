@@ -178,3 +178,15 @@ body {
         max-width: 350px;
     }
 }
+.linkedin-link {
+  font-size: 40px;          /* Size of the logo */
+  color: #0077b5;           /* Official LinkedIn Blue */
+  text-decoration: none;    /* Removes the underline */
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.linkedin-link:hover {
+  color: #005582;           /* Darkens slightly on hover */
+  transform: scale(1.1);    /* Makes it pop out slightly */
+}
