@@ -7,68 +7,78 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        
-.hero {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                  url('https://github.com/MichiganSTAT3/my-website/blob/main/Gemini_Generated_Image_w88oe8w88oe8w88o.png');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      min-height: 100vh;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-  }
-  
-  .hero-content h1 {
-      color: #ffffff;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.8); /* Extra readability */
-      max-width: 800px;
-      margin-bottom: 20px;
-  }
-        
-        /* This ensures the hidden section starts invisible and uses your animation */
+        /* HERO SECTION & DYNAMIC BACKGROUND */
+        .hero {
+            /* Using the RAW URL to ensure the image loads as a background */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://raw.githubusercontent.com/MichiganSTAT3/my-website/main/Gemini_Generated_Image_w88oe8w88oe8w88o.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.7);
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+
+        /* BIO SECTION STYLING */
         #bio-text {
             display: none; 
             margin-top: 25px;
             padding: 30px;
-            background: rgba(255, 255, 255, 0.95);
-            border-left: 4px solid #002147; 
+            background: rgba(255, 255, 255, 0.98);
+            border-left: 5px solid #002147; /* Gator Blue or Navy */
             text-align: left;
-            max-width: 900px;
+            max-width: 800px;
             line-height: 1.6;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
             animation: fadeIn 0.5s ease forwards;
+            color: #333;
         }
 
         .bio-container {
             display: flex;
-            align-items: flex-start;
-            gap: 25px;
+            align-items: center;
+            gap: 30px;
         }
 
         .bio-image {
-            width: 180px;
-            height: 180px; /* Force square */
-            object-fit: cover; /* Prevent stretching */
-            border-radius: 12px;
-            flex-shrink: 0; /* Prevents squishing */
-            border: 2px solid #002147;
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 50%; /* Circular portrait looks great for bios */
+            border: 3px solid #002147;
+            flex-shrink: 0;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* RESPONSIVE DESIGN */
         @media (max-width: 700px) {
             .bio-container {
                 flex-direction: column;
-                align-items: center;
                 text-align: center;
+            }
+            .hero-content h1 {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -88,24 +98,24 @@
     <div class="hero-content">
         <h1>Turning data into wins and wins into fan memories.</h1>
         <button onclick="showBio()" class="cta-button">Bio</button>
-    </div>
-
-    <div id="bio-text">
-        <div class="bio-container">
-            < src="https://raw.githubusercontent.com/MichiganSTAT3/my-website/main/Portrait.jpg" 
-                 alt="Ryan Bernardo" 
-                 class="bio-image">
-            
-            <div class="bio-description">
-                <p>
-                    <strong>Ryan Bernardo</strong> currently serves as the 
-                    <strong>Associate Director of Revenue Generation & Data Analytics</strong> for the University Athletic Association at the University of Florida. 
-                </p>
-                <p>
-                    With a background ranging from business activations with the Washington Commanders to back-end 
-                    data analytics, my perspective bridges the gap between fan input and decision maker output to help 
-                    <strong>turn data into wins and wins into fan memories.</strong>
-                </p>
+        
+        <div id="bio-text">
+            <div class="bio-container">
+                <img src="https://raw.githubusercontent.com/MichiganSTAT3/my-website/main/Portrait.jpg" 
+                     alt="Ryan Bernardo" 
+                     class="bio-image">
+                
+                <div class="bio-description">
+                    <p>
+                        <strong>Ryan Bernardo</strong> currently serves as the 
+                        <strong>Associate Director of Revenue Generation & Data Analytics</strong> for the University Athletic Association at the University of Florida. 
+                    </p>
+                    <p>
+                        With a background ranging from business activations with the Washington Commanders to back-end 
+                        data analytics, my perspective bridges the gap between fan input and decision maker output to help 
+                        <strong>turn data into wins and wins into fan memories.</strong>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -114,7 +124,6 @@
 <script>
     function showBio() {
         var x = document.getElementById("bio-text");
-        // Toggle logic
         if (x.style.display === "none" || x.style.display === "") {
             x.style.display = "block";
         } else {
@@ -125,15 +134,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
